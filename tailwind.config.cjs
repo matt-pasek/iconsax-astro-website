@@ -4,12 +4,14 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        catamaran: ['Catamaran', 'sans-serif'],
+        inter: ['Inter', 'sans-serif'],
       },
       colors: {
         white: '#E5E7E6',
         black: '#141301',
-        accent: '#9A48D0',
+        accent: 'var(--accent-color)',
+        'accent-50': 'var(--accent-color-50)',
+        'accent-40': 'var(--accent-color-40)',
       },
     },
   },
