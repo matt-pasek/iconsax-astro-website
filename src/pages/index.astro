@@ -8,41 +8,20 @@ import Layout from '../layouts/Layout.astro';
 <Layout>
   <div class="flex flex-col gap-1 mt-24">
     <h1 class="font-bold text-white text-4xl sm:text-5xl">Iconsax Astro</h1>
-    <h2 class="text-white text-xl sm:text-2xl">Vuesax's icon library. Now for Astro!</h2>
-    <div class="flex mt-5 gap-5">
+    <h2 class="text-base-content text-xl sm:text-2xl">Vuesax's icon library. Now for Astro!</h2>
+    <div class="flex flex-col sm:flex-row mt-5 gap-5">
       <a
         href="https://github.com/matt-pasek/iconsax-astro"
-        class="hover:animate-none relative inline-flex p-[1px] overflow-hidden rounded-md focus:outline-none focus:ring-1 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50"
+        class="btn btn-sm md:btn-md btn-primary font-inter">Getting Started</a
       >
-        <span
-          id="gradient-spinner"
-          class="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#141301_0%,#F2E9DC_80%,#141301_100%)]"
-        ></span>
-        <span
-          class="inline-flex px-5 py-2 cursor-pointer items-center justify-center rounded-md bg-black text-white backdrop-blur-3xl hover:font-medium transition-all"
-        >
-          Getting Started
-        </span>
-      </a>
-      <button
-        id="copy-button"
-        class="flex gap-2 text-white px-5 py-2 bg-accent-30 rounded-md hover:bg-accent-40 transition-all duration-200 ease-in-out"
-      >
+      <button id="copy-button" class="btn btn-sm md:btn-md btn-neutral font-inter">
         > npm i iconsax-astro
         <Copy type="bulk" color="white" />
       </button>
     </div>
   </div>
   <div class="mt-20 flex justify-between">
-    <div class="px-2 py-2 flex items-center gap-2 bg-accent-30 rounded-md">
-      <SearchNormal color="white" type="bulk" />
-      <input
-        id="search"
-        placeholder="Search icons"
-        class="bg-transparent font-inter text-white/80 focus:outline-none placeholder:font-light placeholder:text-white/30"
-      />
-    </div>
-    <div id="picker"></div>
+    <input id="search" placeholder="🔎 Search icons" class="input" />
   </div>
   <IconsContainer />
   <script>

@@ -13,8 +13,8 @@ const IconName = Icon[name];
 <a
   id=`astro-${name.toLowerCase()}`
   href=`/icons/${name}`
-  class="cursor-pointer basis-[calc(50%-1.25rem)] sm:basis-44 sm:h-44 sm:w-44 px-5 sm:px-0 flex flex-col gap-2 items-center justify-center bg-accent-30 hover:bg-black transition-colors rounded-xl"
+  class="card py-5 gap-5 items-center w-[calc(50%-2rem)] sm:w-1/6 bg-neutral shadow-xl cursor-pointer hover:bg-base-100 transition-colors"
 >
-  <IconName color="currentColor" type={type} size="50px" class="text-accent" />
-  <p class="text-white/50 text-center px-5">{title}</p>
+  <IconName color="currentColor" type={type} size="50px" class="text-primary" />
+  <p class="card-title">{title}</p>
 </a>

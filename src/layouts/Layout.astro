@@ -9,7 +9,7 @@ const { title } = Astro.props;
 ---
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="coffee">
   <head>
     <meta charset="UTF-8" />
     <meta name="description" content="Astro description" />
@@ -20,19 +20,11 @@ const { title } = Astro.props;
     <title>{title}</title>
   </head>
   <body
-    class="bg-black scrollbar-thin scrollbar-thumb-rounded-md scrollbar-track-black scrollbar-thumb-accent"
+    class="bg-base-100 scrollbar-thin scrollbar-thumb-rounded-md scrollbar-track-base-100 scrollbar-thumb-primary"
   >
-    <main class="px-10 sm:px-24 xl:px-40 py-5 font-inter text-center sm:text-left">
+    <main class="px-10 sm:px-24 xl:px-40 py-5 !font-inter text-center sm:text-left">
       <Header />
       <slot />
     </main>
   </body>
-  <style is:global>
-    :root {
-      --accent-color: #f2e9dc;
-      --accent-color-50: #f2e9dc50;
-      --accent-color-40: #f2e9dc40;
-      --accent-color-30: #f2e9dc30;
-    }
-  </style>
 </html>
