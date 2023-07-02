@@ -12,19 +12,31 @@ const { title } = Astro.props;
 <html lang="en" data-theme="coffee">
   <head>
     <meta charset="UTF-8" />
-    <meta name="description" content="Astro description" />
+    <meta name="description" content="Iconsax iconpack for Astro framework." />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
-    <meta name="author" content="Mateusz Pasek" />
+    <meta name="author" content="matt-pasek" />
+    <meta property="og:title" content="Iconsax Astro" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://iconsax-astro.pages.dev" />
+    <meta property="og:locale" content="en" />
+    <meta property="og:image" content="https://iconsax-astro.pages.dev/iconsax-astro.png" />
+    <meta property="og:image:alt" content="Iconsax for Astro" />
+    <meta property="og:description" content="Iconsax iconpack for Astro framework." />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Iconsax Astro" />
+    <meta name="twitter:description" content="Iconsax iconpack for Astro framework." />
+    <meta name="twitter:image" content="https://iconsax-astro.pages.dev/iconsax-astro.png" />
+    <meta name="twitter:image:alt" content="Iconsax for Astro" />
     <title>{title}</title>
   </head>
-  <body
-    class="bg-base-100 scrollbar-thin scrollbar-thumb-rounded-md scrollbar-track-base-100 scrollbar-thumb-primary"
-  >
-    <main class="px-10 sm:px-24 xl:px-40 py-5 !font-inter text-center sm:text-left">
-      <Header />
-      <slot />
-    </main>
-  </body>
 </html>
+<body
+  class="bg-base-100 scrollbar-thin scrollbar-thumb-rounded-md scrollbar-track-base-100 scrollbar-thumb-primary"
+>
+  <main class="px-10 sm:px-24 xl:px-40 py-5 !font-inter text-center sm:text-left">
+    <Header />
+    <slot />
+  </main>
+</body>
