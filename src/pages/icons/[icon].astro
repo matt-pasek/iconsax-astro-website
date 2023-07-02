@@ -1,0 +1,71 @@
+---
+import icons from '../../icons.ts';
+export function getStaticPaths() {
+  return icons.map((icon) => ({ params: { icon: icon } }));
+}
+
+import IconLayout from '../../layouts/Layout.astro';
+import IconWrapper from '../../components/IconWrapper.astro';
+import { ArrowLeft2 } from 'iconsax-astro';
+
+const { icon } = Astro.params;
+const title = icon.replace(/-/g, ' ');
+const size = 54;
+---
+
+<IconLayout title={icon}>
+  <div class="mt-8 flex flex-col gap-10">
+    <div class="flex items-center">
+      <a href="/"><ArrowLeft2 color="white" size={50} /></a>
+      <h1 class="text-white font-medium text-4xl">{title}</h1>
+    </div>
+    <!-- make elements in div wrap after 3 elements -->
+    <div class="flex flex-col gap-5">
+      <div class="flex flex-col gap-2">
+        <h2>Step 1: Install</h2>
+        <div class="mockup-code">
+          <pre data-prefix="$"><code>npm i iconsax-astro</code></pre>
+          <pre data-prefix=">" class="text-success"><code>[Success message]</code></pre>
+        </div>
+      </div>
+      <div class="flex flex-col gap-2">
+        <h2>Step 2: Usage</h2>
+        <div class="mockup-code">
+          <pre><code>---</code></pre>
+          <pre><code>import {'{ ' + icon + ' }'} from 'iconsax-astro';</code></pre>
+          <pre><code>---</code></pre>
+          <pre><code id="code">{`<${icon} type="linear" size={${size}} color="#dc944c" />`}</code></pre>
+        </div>
+      </div>
+    </div>
+    <div class="flex flex-wrap gap-y-5 sm:gap-5 justify-between sm:justify-center">
+      <IconWrapper icon={icon} type="linear" size={size} checked="true" />
+      <IconWrapper icon={icon} type="outline" size={size} />
+      <IconWrapper icon={icon} type="bold" size={size} />
+      <IconWrapper icon={icon} type="bulk" size={size} />
+      <IconWrapper icon={icon} type="broken" size={size} />
+      <IconWrapper icon={icon} type="twotone" size={size} />
+    </div>
+  </div>
+
+  <script>
+    // add event listener to radio buttons
+    const radios = document.querySelectorAll('input[type="radio"]') as NodeListOf<HTMLInputElement>;
+    const code = document.getElementById('code') as HTMLPreElement;
+
+    radios.forEach((radio) => {
+      radio.addEventListener('change', (e) => {
+        const target = e.target as HTMLInputElement;
+        const type = target.value.replace(/-/g, ' ');
+        code.innerText = code.innerText.replace(
+          /<.*>/,
+          `<${
+            document.querySelector('title').innerText
+          } type="${type}" size={54} color="#dc944c" />`,
+        );
+      });
+    });
+  </script>
+
+  <style></style>
+</IconLayout>

@@ -15,8 +15,8 @@ const IconComponent = Icon[icon];
 <input type="radio" id={type} name="icons" value={type} class=`peer/${type} hidden` />
 <label
   for={type}
-  class=`flex flex-col gap-2 w-32 h-32 items-center justify-center text-white/50 text-center px-5 bg-accent-30 hover:bg-black peer-checked/${type}:outline-white transition-colors rounded-xl`
+  class=`card py-5 gap-5 items-center w-40 bg-neutral shadow-xl cursor-pointer hover:bg-base-100 transition-colors peer-checked/${type}:bg-base-100`
 >
-  <IconComponent type={type} size={size} color="currentColor" class="text-accent" />
+  <IconComponent type={type} size={size} color="currentColor" class="text-primary" />
   {type.charAt(0).toUpperCase() + type.slice(1)}
 </label>
