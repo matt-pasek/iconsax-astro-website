@@ -1,0 +1,8 @@
+---
+import Icon from './Icon.astro';
+import icons from '../icons.ts';
+---
+
+<div id="icons-container" class="mt-10 flex flex-wrap justify-between gap-5">
+  {icons.map((icon) => <Icon name={icon} type="linear" />)}
+</div>
