@@ -25,8 +25,8 @@ import Layout from '../layouts/Layout.astro';
         </span>
       </a>
       <button
-        class="flex gap-2 text-white px-5 py-2 bg-accent-30 rounded-md hover:bg-accent-40 transition-colors duration-200 ease-in-out"
-        onclick="navigator.clipboard.writeText('npm i iconsax-astro')"
+        id="copy-button"
+        class="flex gap-2 text-white px-5 py-2 bg-accent-30 rounded-md hover:bg-accent-40 transition-all duration-200 ease-in-out"
       >
         > npm i iconsax-astro
         <Copy type="bulk" color="white" />
@@ -46,6 +46,21 @@ import Layout from '../layouts/Layout.astro';
   </div>
   <IconsContainer />
   <script>
+    /* copy button */
+    const copyButton = document.getElementById('copy-button');
+    function copyToClipboard() {
+      const copyButtonContent = copyButton.innerHTML;
+      navigator.clipboard.writeText('npm i iconsax-astro');
+      copyButton.textContent = 'Copied!';
+      setTimeout(() => {
+        copyButton.innerHTML = copyButtonContent;
+      }, 2000);
+    }
+
+    copyButton.addEventListener('click', () => {
+      copyToClipboard();
+    });
+
     /* search */
     const search = document.getElementById('search') as HTMLInputElement;
 
