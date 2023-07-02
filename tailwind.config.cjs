@@ -6,15 +6,10 @@ module.exports = {
       fontFamily: {
         inter: ['Inter', 'sans-serif'],
       },
-      colors: {
-        white: '#E5E7E6',
-        black: '#141301',
-        accent: 'var(--accent-color)',
-        'accent-50': 'var(--accent-color-50)',
-        'accent-40': 'var(--accent-color-40)',
-        'accent-30': 'var(--accent-color-30)',
-      },
     },
   },
-  plugins: [require('tailwind-scrollbar')({ nocompatible: true })],
+  daisyui: {
+    themes: ['coffee'],
+  },
+  plugins: [require('tailwind-scrollbar')({ nocompatible: true }), require('daisyui')],
 };
