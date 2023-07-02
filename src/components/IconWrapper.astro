@@ -1,0 +1,22 @@
+---
+import * as Icon from 'iconsax-astro';
+interface Props {
+  icon: string;
+  type: string;
+  size: number;
+  checked: boolean;
+}
+
+const { icon, type, size, checked } = Astro.props;
+
+const IconComponent = Icon[icon];
+---
+
+<input type="radio" id={type} name="icons" value={type} class=`peer/${type} hidden` />
+<label
+  for={type}
+  class=`flex flex-col gap-2 w-32 h-32 items-center justify-center text-white/50 text-center px-5 bg-accent-30 hover:bg-black peer-checked/${type}:outline-white transition-colors rounded-xl`
+>
+  <IconComponent type={type} size={size} color="currentColor" class="text-accent" />
+  {type.charAt(0).toUpperCase() + type.slice(1)}
+</label>
