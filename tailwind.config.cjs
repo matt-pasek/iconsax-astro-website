@@ -12,8 +12,9 @@ module.exports = {
         accent: 'var(--accent-color)',
         'accent-50': 'var(--accent-color-50)',
         'accent-40': 'var(--accent-color-40)',
+        'accent-30': 'var(--accent-color-30)',
       },
     },
   },
-  plugins: [],
+  plugins: [require('tailwind-scrollbar')({ nocompatible: true })],
 };

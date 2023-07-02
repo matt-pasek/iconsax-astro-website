@@ -25,8 +25,9 @@
   },
   "dependencies": {
     "@astrojs/tailwind": "^4.0.0",
-    "astro": "^2.7.0",
-    "iconsax-astro": "^0.0.1",
+    "astro": "^2.7.1",
+    "iconsax-astro": "^0.0.2",
+    "tailwind-scrollbar": "^3.0.4",
     "tailwindcss": "^3.3.2"
   },
   "devDependencies": {
